@@ -11,6 +11,7 @@ public class DiceApp extends Thread {
     private static Random random;
     public static List<Integer> rollArray = new ArrayList<Integer>();
 
+    // Constructor
     public DiceApp(int rolls, String name) {
         this.rolls = rolls;
         this.name = name;
