@@ -17,8 +17,8 @@ public class DiceAppMain {
 		int secondDiceRoll = sc.nextInt();
 		Dice dice = new Dice();
 
-		DiceApp dice1 = new DiceApp(firstDiceRoll,dice, "Thread 1");
-		DiceApp dice2 = new DiceApp(secondDiceRoll,dice, "Thread 2");
+		DiceApp dice1 = new DiceApp(firstDiceRoll,dice, "Dice 1");
+		DiceApp dice2 = new DiceApp(secondDiceRoll,dice, "Dice 2");
 
 		dice1.start();
 		dice2.start();
@@ -26,12 +26,12 @@ public class DiceAppMain {
 		dice1.join();
 		dice2.join();
 
-		Map<String, Integer> tempMap = new HashMap<>();
+		Map<String, Integer> frequencyMap = new HashMap<>();
 
 		dice.rollArray.forEach(item -> {
-			if (!tempMap.containsKey(item))
-				tempMap.put(String.valueOf(item), Collections.frequency(dice.rollArray, item));
+			if (!frequencyMap.containsKey(item))
+				frequencyMap.put(String.valueOf(item), Collections.frequency(dice.rollArray, item));
 		});
-		System.out.println("FREQUENCY of Items ::: " + tempMap);
+		System.out.println("FREQUENCY of Items ::: " + frequencyMap);
 	}
 }
