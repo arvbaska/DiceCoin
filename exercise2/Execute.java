@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 public class Execute {
 	public static void main(String args[]) {
 		System.out.print("Loop starts in 5 secs. Press enter anytime to stop the program");
-		Looper execute = new Looper();
+		Looper looper = new Looper();
 		
 		try {
-			execute.sleep(5000);
-			execute.start();
+			looper.sleep(5000);
+			looper.start();
 			
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
@@ -20,10 +20,10 @@ public class Execute {
 		
 		try {
 			br.readLine();
-			execute.stop();
+			looper.setInterrupted(true);
 			System.out.println("Terminated");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
