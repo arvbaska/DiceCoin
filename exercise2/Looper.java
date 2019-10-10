@@ -1,8 +1,10 @@
 package exercise2;
 
 public class Looper extends Thread {
+	
+	boolean isInterrupted = false;
 	public void run() {
-		while(true) {
+		while(!isInterrupted) {
 			
 			try {
 				System.out.println("Hello");
@@ -12,4 +14,10 @@ public class Looper extends Thread {
 			}
 		}
 	}
+	
+	public void setInterrupted(boolean isInterrupted) {
+		this.isInterrupted = isInterrupted;
+	}
+	
+	
 }
