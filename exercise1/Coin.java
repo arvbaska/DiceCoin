@@ -1,5 +1,7 @@
 package exercise1;
 
+import java.util.Random;
+
 public class Coin extends Thread {
 	private int numOfHeads = 0;
 	private int numOfTails = 0;
@@ -18,7 +20,7 @@ public class Coin extends Thread {
 	}
 
 	public void run() {
-
+		//Executes flip given number of times
 		for (int i = 0; i < noOfTosses; i++) {
 			if (flip() == 1) {
 				numOfHeads++;
@@ -29,10 +31,8 @@ public class Coin extends Thread {
 	}
 
 	private int flip() {
-		if (Math.random() > 0.5)
-			return 1;
-		else
-			return 0;
+		Random random = new Random();
+		return random.nextInt(2);
 	}
 
 }
