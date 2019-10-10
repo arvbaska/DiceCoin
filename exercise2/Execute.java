@@ -20,6 +20,7 @@ public class Execute {
 		
 		try {
 			br.readLine();
+			//Set the isInterrupted flag to true
 			looper.setInterrupted(true);
 			System.out.println("Terminated");
 		} catch (IOException e) {
