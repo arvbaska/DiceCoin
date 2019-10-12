@@ -12,18 +12,16 @@ public class DiceApp extends Thread {
 		this.dice = dice;
 	}
 
+	//Running thread
 	public void run() {
 		for (int index = 0; index < this.rolls; index++) {
-			dice.addIntoArray(name);	
+			dice.addIntoArray(name);
 			try {
 				sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-//			System.out.println(this.name);
 		}
 	}
 
-	
 }
